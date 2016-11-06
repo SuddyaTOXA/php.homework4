@@ -7,8 +7,16 @@
             "email": "suddyadred@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "src/Controllers",
+            "Repositories\\": "src/Repositories",
+            "Views\\": "src/Views"
+        }
+    },
     "require": {
         "php": ">=5.6.0",
+        "ext-mysqlnd": "*",
         "fzaninotto/faker": "^1.6",
         "symfony/routing": "^3.1",
         "twig/twig": "^1.27"
