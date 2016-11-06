@@ -5,35 +5,34 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
-    <h1>Geekhub Students</h1>
-    <table class="table table-bordered">
-        <tr>
-            <th>#</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email name</th>
-            <th>Phone</th>
-            <th>Actions</th>
-        </tr>
-        {% for student in students %}
-            <tr>
-                <td>{{ student.id }}</td>
-                <td>{{ student.firstName }}</td>
-                <td>{{ student.lastName }}</td>
-                <td>{{ student.email }}</td>
-                <td>{{ student.tell }}</td>
-                <td><a href="index.php?controller=students&action=edit&id={{ student.id }}">edit</a> <a href="index.php?controller=students&action=delete&id={{ student.id }}">delete</a></td>
-            </tr>
-        {% endfor %}
-    </table>
-    <a href="index.php?controller=students&action=new&id={{ student.id }}">Add a new student</a>
+    <h1>Geekhub Student Form</h1>
+    <form method="POST" action="#">
+        <div class="row">
+            <label for="first-name">First Name:</label>
+            <input class="form-control" type="text" id="first-name" name="first_name" value="{{ first_name }}">
+        </div>
+        <div class="row">
+            <label for="last-name">Last Name:</label>
+            <input class="form-control" type="text" id="last-name" name="last_name" value="{{ last_name }}">
+        </div>
+        <div class="row">
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" id="email" name="email" value="{{ email }}">
+        </div>
+        <div class="row">
+            <label for="tell">Phone:</label>
+            <input class="form-control" type="tel" id="tell" name="tell" value="{{ tell }}">
+        </div>
+        <div class="row">
+            <input class="btn btn-default" type="submit" valut="Create">
+        </div>
+    </form>
 </div>
 </body>
 </html>
