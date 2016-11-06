@@ -30,7 +30,7 @@ class Connector
                         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                         university_name CHAR (50),
                         city CHAR (50),
-                        site_ulr CHAR (100)
+                        site_url CHAR (100)
                     )ENGINE=INNODB;
                     CREATE TABLE IF NOT EXISTS departments (
                         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
