@@ -38,7 +38,6 @@ class StudentsRepository implements RepositoryInterface
                 'tell' => $result['tell'],
             ];
         }
-
         return $results;
     }
     public function generate($count)
