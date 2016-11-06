@@ -8,6 +8,7 @@ $controllerName = ucfirst($controllerName) . 'Controller';
 $controllerName = 'Controllers\\' . $controllerName;
 
 $connector = new Repositories\Connector(
+    $configuration['server'],
     $configuration['database'],
     $configuration['user'],
     $configuration['password']

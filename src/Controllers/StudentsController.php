@@ -86,4 +86,14 @@ class StudentsController
         }
         return $this->twig->render('students_delete.html.twig', array('student_id' => $_GET['id']));
     }
+
+    public function generateAction ()
+    {
+            if (isset($_POST['count'])) {
+                $count = (int) $_POST['count'];
+                $this->repository->generate($count);
+                return $this->indexAction();
+            }
+            return $this->twig->render('students_generate.html.twig');
+    }
 }

@@ -1,5 +1,7 @@
 <?php
+
 namespace Repositories;
+
 /**
  * Interface RepositoryInterface
  * @package Repositories
@@ -12,7 +14,7 @@ interface RepositoryInterface
      * @return mixed
      */
     public function insert(array $entityData);
-    
+
     /**
      * Update exist entity data in the DB
      * @param array $entityData

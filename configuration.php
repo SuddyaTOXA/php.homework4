@@ -1,6 +1,7 @@
 <?php
 $configuration = array(
-    'database' => 'hw_database',
+    'server' => 'localhost',
+    'database' => 'db_trylala',
     'user' => 'root',
     'password' => '',
 );

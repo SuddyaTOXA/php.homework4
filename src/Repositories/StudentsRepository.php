@@ -41,6 +41,20 @@ class StudentsRepository implements RepositoryInterface
 
         return $results;
     }
+    public function generate($count)
+    {
+        $statement = $this->connector->getPdo()->prepare('INSERT INTO students (first_name, last_name, email, tell) VALUES(:firstName, :lastName, :email, :tell)');
+        $faker = \Faker\Factory::create();
+        $insertedPKs = array();
+        for ($i=0; $i < $count; $i++) {
+            $statement->bindValue(':firstName', $faker->name, \PDO::PARAM_STR);
+            $statement->bindValue(':lastName', $faker->lastName, \PDO::PARAM_STR);
+            $statement->bindValue(':email', $faker->email, \PDO::PARAM_INT);
+            $statement->bindValue(':tell', $faker->phoneNumber, \PDO::PARAM_STR);
+            $statement->execute();
+            $insertedPKs[]= $this->connector->getPdo()->lastInsertId();
+        }
+    }
 
     public function insert(array $studentData)
     {
