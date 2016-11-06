@@ -1,6 +1,6 @@
 <?php
 $configuration = array(
-    'database' => 'db_homework',
+    'database' => 'hw_database',
     'user' => 'root',
     'password' => '',
 );

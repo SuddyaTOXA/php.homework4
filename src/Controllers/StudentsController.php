@@ -25,6 +25,7 @@ class StudentsController
     public function indexAction()
     {
         $studentsData = $this->repository->findAll();
+ 
         return $this->twig->render('students.html.twig', ['students' => $studentsData]);
     }
 
