@@ -26,12 +26,12 @@ class UniversitiesController
     {
         $universityData = $this->repository->findAll();
  
-        return $this->twig->render('universities.html.twig', ['students' => $universityData]);
+        return $this->twig->render('universities.html.twig', ['universities' => $universityData]);
     }
 
     public function newAction()
     {
-        if (isset($_POST['first_name'])) {
+        if (isset($_POST['university_name'])) {
             $this->repository->insert(
                 [
                     'university_name' => $_POST['university_name'],
@@ -80,7 +80,7 @@ class UniversitiesController
             $this->repository->remove(['id' => $id]);
             return $this->indexAction();
         }
-        return $this->twig->render('universities.html.twig', array('id' => $_GET['id']));
+        return $this->twig->render('universities_delete.html.twig', array('id' => $_GET['id']));
     }
 
     public function generateAction ()

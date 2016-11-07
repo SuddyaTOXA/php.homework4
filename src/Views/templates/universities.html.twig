@@ -35,28 +35,26 @@
 </nav>
 
 <div class="container">
-    <h1>Students</h1><a href="index.php?controller=students&action=generate">Generate new students</a>
+    <h1>Universities</h1><a href="index.php?controller=universities&action=generate">Generate new universities</a>
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email name</th>
-            <th>Phone</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Site url</th>
             <th>Actions</th>
         </tr>
-        {% for student in students %}
+        {% for university in universities %}
             <tr>
-                <td>{{ student.id }}</td>
-                <td>{{ student.firstName }}</td>
-                <td>{{ student.lastName }}</td>
-                <td>{{ student.email }}</td>
-                <td>{{ student.tell }}</td>
-                <td><a href="index.php?controller=students&action=edit&id={{ student.id }}">edit</a> <a href="index.php?controller=students&action=delete&id={{ student.id }}">delete</a></td>
+                <td>{{ university.id }}</td>
+                <td>{{ university.universityName }}</td>
+                <td>{{ university.city }}</td>
+                <td>{{ university.siteUrl }}</td>
+                <td><a href="index.php?controller=universities&action=edit&id={{ university.id  }}">edit</a> <a href="index.php?controller=universities&action=delete&id={{ university.id  }}">delete</a></td>
             </tr>
         {% endfor %}
     </table>
-    <a href="index.php?controller=students&action=new&id={{ student.id }}">Add a new student</a>
+    <a href="index.php?controller=universities&action=new&id={{ university.id  }}">Add a new university</a>
 </div>
 </body>
 </html>
